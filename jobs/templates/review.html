@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h1>Create Review</h1>
+<form action="POST">
+    <div class="field">
+        <div class="label">Job Title</div>
+        <div class="control">
+            <input class="input" type="text" name="title" id="title" required></input>
+        </div>
+    </div>
+    <div class="field">
+        <div class="label">Rating</div>
+        <div class="control">
+            <div class="select">
+                <select name="rating" id="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="field">
+        <div class="label">Review</div>
+        <div class="control">
+            <textarea name="review" id="review" class="textarea" required></textarea>
+        </div>
+    </div>
+    <div class="field">
+        <div class="label">
+            <label class="label">Employment status</label>
+            <div class="control">
+                <div class="select">
+                    <select name="status" id="status">
+                        <option value="current">Current</option>
+                        <option value="former">Former</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="field is-grouped">
+        <div class="control">
+            <button class="button is-link">Submit</button>
+        </div>
+        <div class="control">
+            <a href="{{ url_for('employer', employer_id=employer_id) }}" class="button is-text">Cancel</a>
+        </div>
+    </div>
+</form>
+{% endblock %}
